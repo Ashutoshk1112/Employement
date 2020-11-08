@@ -24,14 +24,11 @@ class CategoryCard extends StatelessWidget {
 //            ),
 //          ),
 //        ),
-        title: Text("DRIVER", style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w400)),
+        title: Text(job.jobTitle, style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w400)),
         subtitle: Text(
-          "Driver • 20k-30k",
+          "{job.location} • {job.salary}",
         ),
-        trailing: Icon(
-          Icons.more_vert,
-          color: Colors.black,
-        ),
+
       ),
     );
   }

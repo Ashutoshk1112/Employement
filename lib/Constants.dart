@@ -53,3 +53,8 @@ final kCaptionTextStyle = TextStyle(
   color: kSecondaryTextColor,
   fontSize: 10,
 );
+
+var kSubtitleStyle = TextStyle(
+  fontSize: 14.0,
+  color: Colors.black,
+);

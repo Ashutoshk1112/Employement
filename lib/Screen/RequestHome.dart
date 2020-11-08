@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:employement/Component/ReqCard.dart';
 import 'package:employement/Screen/DescriptionScreen.dart';
+import 'package:employement/Job.dart';
 
 class ReqHome extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,17 +50,17 @@ class ReqHome extends StatelessWidget {
                   style:TextStyle(fontSize: 23,fontWeight: FontWeight.w500,wordSpacing: 2.5,color: Colors.black) ),
               SizedBox(height: 45.0,),
               ListView.builder(
-                itemCount: 10,
+                itemCount:4,
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 physics: ScrollPhysics(),
                 itemBuilder: (context, index) {
-//                  var recent = categories[index];
+                  var recent = JobList[index];
                   return InkWell(
                     onTap: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=> DescriptionScreen()) );
+                     Navigator.push(context, MaterialPageRoute(builder: (context)=> DescriptionScreen(data: JobList[1],)) );
                     },
-                    child: CategoryCard(),
+                    child: CategoryCard(job: JobList[1], ),
                   );
                 },
               ),

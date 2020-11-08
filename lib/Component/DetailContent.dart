@@ -35,18 +35,19 @@ class DetailContent extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(height: kSpacingUnit * 2),
-                    Text("Driver",
-//                      data.hiringName,
-                      style: kTitleTextStyle,
+                    Text(
+                      data.jobTitle,
+                      style: kTitleTextStyle.copyWith(fontSize: 50.0),
                     ),
                     SizedBox(height: kSpacingUnit),
-                    Text("Bengaluru",
-//                      data.location,
-                      style: kCaptionTextStyle,
+                    Text(
+                      data.location,
+                      style: kCaptionTextStyle.copyWith(fontSize: 20.0),
                     ),
-                    Text("20k",
-//                      data.salary,
-                      style: kTitleTextStyle,
+                    SizedBox(height: kSpacingUnit),
+                    Text(
+                      data.salary,
+                      style: kTitleTextStyle.copyWith(fontSize: 25.0),
                     ),
                   ],
                 ),
@@ -54,13 +55,36 @@ class DetailContent extends StatelessWidget {
               SizedBox(height: kSpacingUnit * 5),
               Text(
                 'Responsibilities',
-                style: kSubTitleTextStyle,
+                style: kSubTitleTextStyle.copyWith(fontSize: 20.0),
               ),
               SizedBox(height: kSpacingUnit * 2),
-//              if (data.responsibilities != null && data.responsibilities.length > 0)
-//                ...data.responsibilities
-//                    .map((responsibility) => DetailItem(data: responsibility))
-//                    .toList(),
+              Column(
+                children: data.responsibility
+                    .map(
+                      (e) => Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "•  ",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontSize: 25.0),
+                      ),
+                      Expanded(
+                        child: Text(
+                          "$e\n",
+                          style: kSubtitleStyle.copyWith(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w300,
+                            height: 1.5,
+                            color: Color(0xFF5B5B5B),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                    .toList(),
+              ),
               SizedBox(height: kSpacingUnit * 15),
             ],
           ),

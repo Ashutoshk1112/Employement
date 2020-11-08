@@ -20,8 +20,8 @@ class DetailHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
 
-          Text("Driver",
-//            data.hiringName,
+          Text(
+            data.hiringName,
             style: kSubTitleTextStyle.copyWith(
               fontWeight: FontWeight.w600,
             ),
